@@ -1,0 +1,653 @@
+/* ==========================================================================
+   THEMA PANEL v2.0 - NEBULA x REVIACTYL EDITION
+   Developer : Kicen x Thema Panel
+   Provider  : KyHosting (https://github.com/kyhosting/Themapnl)
+   Style     : Modern Dark Glassmorphism, Aurora Glow, Reviactyl Metrics,
+               Nebula Pill Tabs, Sleek Terminals, Brand Protection
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+    /* Color Palette - Nebula Void & Reviactyl Dark */
+    --pnl-bg-base: #060911;
+    --pnl-bg-surface: #0a0e1a;
+    --pnl-bg-elevated: #0f1526;
+    
+    /* Glassmorphism Layers */
+    --pnl-glass-card: rgba(14, 21, 38, 0.70);
+    --pnl-glass-card-hover: rgba(22, 33, 62, 0.84);
+    --pnl-glass-subtle: rgba(12, 18, 33, 0.50);
+    --pnl-glass-nav: rgba(9, 13, 24, 0.85);
+    --pnl-glass-input: rgba(13, 19, 36, 0.68);
+    
+    /* Borders & Outlines */
+    --pnl-border: rgba(255, 255, 255, 0.08);
+    --pnl-border-subtle: rgba(255, 255, 255, 0.04);
+    --pnl-border-hover: rgba(99, 102, 241, 0.50);
+    --pnl-border-glow: rgba(6, 182, 212, 0.45);
+    
+    /* Blur Filters */
+    --pnl-blur: blur(16px) saturate(185%);
+    --pnl-blur-heavy: blur(24px) saturate(190%);
+    --pnl-blur-subtle: blur(10px);
+    
+    /* Shadows & Glows */
+    --pnl-shadow-card: 0 10px 30px -5px rgba(0, 0, 0, 0.6), inset 0 1px 0 0 rgba(255, 255, 255, 0.09);
+    --pnl-shadow-hover: 0 20px 45px -8px rgba(99, 102, 241, 0.35), inset 0 1px 0 0 rgba(255, 255, 255, 0.18);
+    --pnl-shadow-glow: 0 0 25px rgba(99, 102, 241, 0.35);
+    
+    /* Accent Gradients - Nebula & Reviactyl */
+    --pnl-accent-indigo: #6366f1;
+    --pnl-accent-cyan: #06b6d4;
+    --pnl-accent-purple: #8b5cf6;
+    --pnl-accent-blue: #3b82f6;
+    --pnl-accent-emerald: #10b981;
+    --pnl-accent-rose: #f43f5e;
+    --pnl-accent-amber: #f59e0b;
+    --pnl-accent-crimson: #e11d48;
+
+    --pnl-grad-primary: linear-gradient(135deg, #6366f1 0%, #3b82f6 50%, #06b6d4 100%);
+    --pnl-grad-nebula: linear-gradient(135deg, #8b5cf6 0%, #6366f1 50%, #06b6d4 100%);
+    --pnl-grad-reviactyl: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 50%, #6366f1 100%);
+    --pnl-grad-success: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    --pnl-grad-warning: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+    --pnl-grad-danger: linear-gradient(135deg, #dc2626 0%, #f43f5e 100%);
+    
+    /* Typography */
+    --pnl-font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --pnl-font-mono: 'JetBrains Mono', monospace;
+}
+
+/* ==========================================================================
+   Global Ambient Mesh & Reset
+   ========================================================================== */
+html, body {
+    font-family: var(--pnl-font-sans) !important;
+    background-color: var(--pnl-bg-base) !important;
+    background-image: 
+        radial-gradient(at 10% 12%, rgba(99, 102, 241, 0.18) 0px, transparent 48%),
+        radial-gradient(at 90% 8%, rgba(6, 182, 212, 0.16) 0px, transparent 45%),
+        radial-gradient(at 50% 85%, rgba(139, 92, 246, 0.15) 0px, transparent 52%),
+        radial-gradient(at 88% 88%, rgba(16, 185, 129, 0.10) 0px, transparent 40%) !important;
+    background-attachment: fixed !important;
+    background-size: cover !important;
+    color: #e2e8f0 !important;
+    min-height: 100vh !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Sleek Modern Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: rgba(6, 9, 17, 0.65);
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 9999px;
+    border: 1px solid transparent;
+    background-clip: padding-box;
+    transition: background 0.2s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--pnl-accent-indigo);
+}
+
+::selection {
+    background: rgba(99, 102, 241, 0.38);
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   Top Navigation Bar (Reviactyl / Nebula Combo)
+   ========================================================================== */
+nav,
+div[class*="NavigationBar"] {
+    background: var(--pnl-glass-nav) !important;
+    backdrop-filter: var(--pnl-blur-heavy) !important;
+    -webkit-backdrop-filter: var(--pnl-blur-heavy) !important;
+    border-bottom: 1px solid var(--pnl-border) !important;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.45) !important;
+    position: relative;
+    z-index: 50;
+}
+
+nav a,
+div[class*="NavigationBar"] a {
+    transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    border-radius: 10px !important;
+    font-weight: 500 !important;
+}
+
+nav a:hover,
+div[class*="NavigationBar"] a:hover {
+    color: var(--pnl-accent-cyan) !important;
+    background: rgba(255, 255, 255, 0.06) !important;
+    transform: translateY(-1px);
+}
+
+/* Active navigation link */
+nav a.active,
+div[class*="NavigationBar"] a[class*="active"] {
+    background: rgba(99, 102, 241, 0.16) !important;
+    color: #ffffff !important;
+    box-shadow: inset 0 0 0 1px rgba(99, 102, 241, 0.4) !important;
+}
+
+/* Developer & Brand Watermark in Navigation (Non-removable CSS Injection) */
+nav::after,
+div[class*="NavigationBar"]::after {
+    content: "Kicen x Thema Panel";
+    display: inline-flex;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 3px 12px;
+    border: 1px solid rgba(99, 102, 241, 0.35);
+    border-radius: 9999px;
+    background-color: rgba(99, 102, 241, 0.10);
+    margin-left: auto;
+    margin-right: 14px;
+    box-shadow: 0 0 14px rgba(99, 102, 241, 0.25);
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   SubNavigation (Nebula Floating Pill Tabs)
+   ========================================================================== */
+div[class*="SubNavigation"] {
+    background: rgba(10, 15, 27, 0.75) !important;
+    backdrop-filter: var(--pnl-blur) !important;
+    -webkit-backdrop-filter: var(--pnl-blur) !important;
+    border-bottom: 1px solid var(--pnl-border) !important;
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+}
+
+div[class*="SubNavigation"] a {
+    border-radius: 10px !important;
+    padding: 6px 14px !important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    color: #94a3b8 !important;
+    transition: all 0.2s ease !important;
+}
+
+div[class*="SubNavigation"] a:hover {
+    color: #f8fafc !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+
+div[class*="SubNavigation"] a.active,
+div[class*="SubNavigation"] a[class*="active"] {
+    background: var(--pnl-grad-primary) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 18px rgba(99, 102, 241, 0.4) !important;
+    border-bottom: none !important;
+}
+
+/* ==========================================================================
+   Cards, Server Rows & Panels (Reviactyl x Nebula Hybrid)
+   ========================================================================== */
+.bg-neutral-900,
+.bg-neutral-800,
+body.bg-neutral-800,
+div[class*="bg-neutral-900"],
+div[class*="bg-neutral-800"] {
+    background-color: transparent !important;
+}
+
+.bg-neutral-700,
+div[class*="bg-neutral-700"],
+div[class*="ServerRow"],
+div[class*="GreyRowBox"],
+div[class*="TitledGreyBox"],
+div[class*="ContentBox"],
+div[class*="Card"] {
+    background: var(--pnl-glass-card) !important;
+    backdrop-filter: var(--pnl-blur) !important;
+    -webkit-backdrop-filter: var(--pnl-blur) !important;
+    border: 1px solid var(--pnl-border) !important;
+    border-radius: 16px !important;
+    box-shadow: var(--pnl-shadow-card) !important;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Card hover animation with glowing aura */
+div[class*="ServerRow"]:hover,
+div[class*="GreyRowBox"]:hover,
+a > div[class*="GreyRowBox"]:hover {
+    transform: translateY(-3px) !important;
+    background: var(--pnl-glass-card-hover) !important;
+    border-color: var(--pnl-border-hover) !important;
+    box-shadow: var(--pnl-shadow-hover) !important;
+}
+
+/* Server Row Left Glow Indicator */
+div[class*="ServerRow"]::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--pnl-grad-primary);
+    opacity: 0.65;
+    transition: opacity 0.2s ease, width 0.2s ease;
+}
+
+div[class*="ServerRow"]:hover::before {
+    opacity: 1;
+    width: 6px;
+    box-shadow: 0 0 14px var(--pnl-accent-cyan);
+}
+
+/* Card Titles / Headers */
+div[class*="TitledGreyBox"] > div:first-child {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border-bottom: 1px solid var(--pnl-border) !important;
+    border-top-left-radius: 16px !important;
+    border-top-right-radius: 16px !important;
+    padding: 14px 20px !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.01em !important;
+}
+
+/* Sub-boxes inside cards */
+.bg-neutral-600,
+div[class*="bg-neutral-600"] {
+    background: var(--pnl-glass-subtle) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 12px !important;
+}
+
+/* ==========================================================================
+   Console & Terminal (Nebula Sleek Codebase)
+   ========================================================================== */
+div[class*="Terminal"],
+.xterm,
+.xterm-viewport,
+div[class*="Console"] {
+    background: rgba(4, 7, 14, 0.94) !important;
+    border-radius: 16px !important;
+    border: 1px solid rgba(99, 102, 241, 0.28) !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.07) !important;
+    font-family: var(--pnl-font-mono) !important;
+}
+
+.xterm-screen {
+    padding: 12px !important;
+}
+
+/* Console Prompt Bar */
+div[class*="Console"] input,
+div[class*="Terminal"] input {
+    font-family: var(--pnl-font-mono) !important;
+    background: rgba(8, 12, 22, 0.88) !important;
+    border: 1px solid rgba(99, 102, 241, 0.35) !important;
+    border-radius: 12px !important;
+}
+
+/* ==========================================================================
+   Power Action Buttons (Reviactyl Glow Buttons)
+   ========================================================================== */
+button,
+.btn {
+    border-radius: 12px !important;
+    font-family: var(--pnl-font-sans) !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.01em !important;
+    transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Primary Button (Nebula Gradient) */
+.bg-primary-500,
+.bg-primary-600,
+button[class*="bg-primary"],
+.btn-primary {
+    background: var(--pnl-grad-primary) !important;
+    border: none !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 18px rgba(99, 102, 241, 0.42) !important;
+}
+
+.bg-primary-500:hover,
+.bg-primary-600:hover,
+button[class*="bg-primary"]:hover,
+.btn-primary:hover {
+    transform: translateY(-2px) scale(1.02) !important;
+    box-shadow: 0 6px 25px rgba(6, 182, 212, 0.6) !important;
+}
+
+/* Start Button (Emerald Glow) */
+.bg-green-500,
+.bg-green-600,
+button[class*="bg-green"],
+.btn-success {
+    background: var(--pnl-grad-success) !important;
+    border: none !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 18px rgba(16, 185, 129, 0.45) !important;
+}
+
+.bg-green-500:hover,
+.bg-green-600:hover,
+button[class*="bg-green"]:hover,
+.btn-success:hover {
+    transform: translateY(-2px) scale(1.02) !important;
+    box-shadow: 0 6px 25px rgba(16, 185, 129, 0.65) !important;
+}
+
+/* Stop / Restart Button (Amber Glow) */
+.bg-yellow-500,
+.bg-yellow-600,
+button[class*="bg-yellow"],
+.btn-warning {
+    background: var(--pnl-grad-warning) !important;
+    border: none !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 18px rgba(245, 158, 11, 0.45) !important;
+}
+
+.bg-yellow-500:hover,
+.bg-yellow-600:hover,
+button[class*="bg-yellow"]:hover,
+.btn-warning:hover {
+    transform: translateY(-2px) scale(1.02) !important;
+    box-shadow: 0 6px 25px rgba(245, 158, 11, 0.65) !important;
+}
+
+/* Kill / Danger Button (Crimson Glow) */
+.bg-red-500,
+.bg-red-600,
+button[class*="bg-red"],
+.btn-danger {
+    background: var(--pnl-grad-danger) !important;
+    border: none !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 18px rgba(244, 63, 94, 0.45) !important;
+}
+
+.bg-red-500:hover,
+.bg-red-600:hover,
+button[class*="bg-red"]:hover,
+.btn-danger:hover {
+    transform: translateY(-2px) scale(1.02) !important;
+    box-shadow: 0 6px 25px rgba(244, 63, 94, 0.65) !important;
+}
+
+/* Neutral / Ghost Buttons */
+button[class*="bg-neutral-600"],
+button[class*="bg-neutral-700"] {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid var(--pnl-border) !important;
+    backdrop-filter: var(--pnl-blur-subtle) !important;
+}
+
+button[class*="bg-neutral-600"]:hover,
+button[class*="bg-neutral-700"]:hover {
+    background: rgba(255, 255, 255, 0.12) !important;
+    border-color: rgba(255, 255, 255, 0.22) !important;
+}
+
+/* ==========================================================================
+   Resource Meters & Progress Bars (Reviactyl Style)
+   ========================================================================== */
+div[class*="progress"],
+div[role="progressbar"] {
+    border-radius: 9999px !important;
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(255, 255, 255, 0.07) !important;
+    overflow: hidden !important;
+    height: 8px !important;
+}
+
+div[role="progressbar"] > div {
+    border-radius: 9999px !important;
+    background: var(--pnl-grad-primary) !important;
+    box-shadow: 0 0 14px rgba(6, 182, 212, 0.65) !important;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* ==========================================================================
+   Status Indicators & Pulsing Dots
+   ========================================================================== */
+@keyframes pnl-pulse {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+span[class*="status"] {
+    font-weight: 600 !important;
+    border-radius: 9999px !important;
+    padding: 3px 12px !important;
+    font-size: 11px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+}
+
+/* ==========================================================================
+   Inputs, Textarea & Select
+   ========================================================================== */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+select,
+textarea {
+    background: var(--pnl-glass-input) !important;
+    border: 1px solid var(--pnl-border) !important;
+    border-radius: 12px !important;
+    color: #f8fafc !important;
+    backdrop-filter: var(--pnl-blur-subtle) !important;
+    -webkit-backdrop-filter: var(--pnl-blur-subtle) !important;
+    transition: all 0.2s ease !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--pnl-accent-indigo) !important;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25), 0 0 18px rgba(99, 102, 241, 0.25) !important;
+    outline: none !important;
+}
+
+/* ==========================================================================
+   Modals & Popups
+   ========================================================================== */
+div[role="dialog"],
+div[class*="Modal"] {
+    background: rgba(9, 14, 27, 0.90) !important;
+    backdrop-filter: var(--pnl-blur-heavy) !important;
+    -webkit-backdrop-filter: var(--pnl-blur-heavy) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.85), 0 0 35px rgba(99, 102, 241, 0.25) !important;
+}
+
+/* ==========================================================================
+   Developer Watermark & Branding UI Styles
+   ========================================================================== */
+.themapnl-footer-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 38px;
+    background: rgba(7, 11, 21, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 9999;
+    font-size: 12px;
+    color: #94a3b8;
+    pointer-events: auto;
+    font-family: var(--pnl-font-sans);
+}
+
+.themapnl-footer-bar a {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.themapnl-footer-bar a:hover {
+    color: #818cf8;
+    text-shadow: 0 0 8px rgba(99, 102, 241, 0.5);
+}
+
+.themapnl-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(99, 102, 241, 0.14);
+    border: 1px solid rgba(99, 102, 241, 0.32);
+    padding: 3px 12px;
+    border-radius: 9999px;
+    color: #e2e8f0;
+    font-weight: 600;
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.themapnl-badge:hover {
+    background: rgba(99, 102, 241, 0.25);
+    border-color: rgba(6, 182, 212, 0.5);
+    box-shadow: 0 0 14px rgba(99, 102, 241, 0.35);
+    transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   Admin Panel (AdminLTE) Overrides
+   ========================================================================== */
+.content-wrapper,
+.right-side,
+.main-footer {
+    background: transparent !important;
+    border-top: 1px solid var(--pnl-border) !important;
+    color: #cbd5e1 !important;
+}
+
+.main-header .navbar {
+    background: var(--pnl-glass-nav) !important;
+    backdrop-filter: var(--pnl-blur-heavy) !important;
+    -webkit-backdrop-filter: var(--pnl-blur-heavy) !important;
+    border-bottom: 1px solid var(--pnl-border) !important;
+}
+
+.main-header .logo {
+    background: rgba(8, 12, 22, 0.94) !important;
+    border-right: 1px solid var(--pnl-border) !important;
+    border-bottom: 1px solid var(--pnl-border) !important;
+    font-family: var(--pnl-font-sans) !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.02em !important;
+    background-image: var(--pnl-grad-primary) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.main-sidebar,
+.left-side {
+    background: rgba(8, 12, 22, 0.88) !important;
+    backdrop-filter: var(--pnl-blur-heavy) !important;
+    -webkit-backdrop-filter: var(--pnl-blur-heavy) !important;
+    border-right: 1px solid var(--pnl-border) !important;
+}
+
+.sidebar-menu > li.header {
+    background: transparent !important;
+    color: #64748b !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    font-size: 11px !important;
+    letter-spacing: 0.08em !important;
+}
+
+.sidebar-menu > li > a {
+    color: #94a3b8 !important;
+    border-left: 3px solid transparent !important;
+    transition: all 0.2s ease !important;
+}
+
+.sidebar-menu > li:hover > a,
+.sidebar-menu > li.active > a {
+    color: #ffffff !important;
+    background: rgba(99, 102, 241, 0.14) !important;
+    border-left-color: var(--pnl-accent-indigo) !important;
+}
+
+.box {
+    background: var(--pnl-glass-card) !important;
+    backdrop-filter: var(--pnl-blur) !important;
+    -webkit-backdrop-filter: var(--pnl-blur) !important;
+    border: 1px solid var(--pnl-border) !important;
+    border-radius: 16px !important;
+    box-shadow: var(--pnl-shadow-card) !important;
+    color: #e2e8f0 !important;
+}
+
+.box.box-primary { border-top: 3px solid var(--pnl-accent-indigo) !important; }
+.box.box-info    { border-top: 3px solid var(--pnl-accent-cyan) !important; }
+.box.box-success { border-top: 3px solid var(--pnl-accent-emerald) !important; }
+.box.box-danger  { border-top: 3px solid var(--pnl-accent-rose) !important; }
+.box.box-warning { border-top: 3px solid var(--pnl-accent-amber) !important; }
+
+.box-header {
+    border-bottom: 1px solid var(--pnl-border) !important;
+    color: #f8fafc !important;
+}
+
+.box-footer {
+    background: rgba(255, 255, 255, 0.02) !important;
+    border-top: 1px solid var(--pnl-border) !important;
+    border-bottom-left-radius: 16px !important;
+    border-bottom-right-radius: 16px !important;
+}
+
+.info-box {
+    background: var(--pnl-glass-card) !important;
+    backdrop-filter: var(--pnl-blur) !important;
+    -webkit-backdrop-filter: var(--pnl-blur) !important;
+    border: 1px solid var(--pnl-border) !important;
+    border-radius: 16px !important;
+    box-shadow: var(--pnl-shadow-card) !important;
+    overflow: hidden !important;
+}
+
+.info-box-icon {
+    border-top-left-radius: 16px !important;
+    border-bottom-left-radius: 16px !important;
+}
+
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+    border-top: 1px solid var(--pnl-border) !important;
+}
+
+.table-hover > tbody > tr:hover {
+    background-color: rgba(99, 102, 241, 0.08) !important;
+}
