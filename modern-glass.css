@@ -1,58 +1,67 @@
 /* ==========================================================================
-   THEMA PANEL v2.0 - NEBULA x REVIACTYL EDITION
+   THEMA PANEL v2.0 - ULTRA EDITION (NEBULA x REVIACTYL OVERHAUL)
    Developer : Kicen x Thema Panel
    Provider  : KyHosting (https://github.com/kyhosting/Themapnl)
-   Style     : Modern Dark Glassmorphism, Aurora Glow, Reviactyl Metrics,
-               Nebula Pill Tabs, Sleek Terminals, Brand Protection
+   Features  : Cyber Aurora Mesh, Deep Frosted Glassmorphism, Reviactyl Power Gauges,
+               Nebula Floating Tabs, Glowing Pulse States, All-Menu Watermark
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 
 :root {
-    /* Color Palette - Nebula Void & Reviactyl Dark */
-    --pnl-bg-base: #060911;
-    --pnl-bg-surface: #0a0e1a;
-    --pnl-bg-elevated: #0f1526;
+    /* Base Obsidian Palette */
+    --pnl-bg-base: #050811;
+    --pnl-bg-surface: #0a0e1c;
+    --pnl-bg-elevated: #0f152b;
+    --pnl-bg-overlay: rgba(6, 10, 20, 0.88);
     
-    /* Glassmorphism Layers */
-    --pnl-glass-card: rgba(14, 21, 38, 0.70);
-    --pnl-glass-card-hover: rgba(22, 33, 62, 0.84);
-    --pnl-glass-subtle: rgba(12, 18, 33, 0.50);
-    --pnl-glass-nav: rgba(9, 13, 24, 0.85);
-    --pnl-glass-input: rgba(13, 19, 36, 0.68);
+    /* Ultra Glassmorphism Surfaces */
+    --pnl-glass-card: rgba(13, 20, 38, 0.72);
+    --pnl-glass-card-hover: rgba(22, 34, 66, 0.88);
+    --pnl-glass-subtle: rgba(10, 16, 32, 0.55);
+    --pnl-glass-nav: rgba(8, 12, 24, 0.88);
+    --pnl-glass-input: rgba(11, 18, 35, 0.75);
+    --pnl-glass-dropdown: rgba(9, 14, 28, 0.96);
     
-    /* Borders & Outlines */
+    /* Neon Borders & Highlights */
     --pnl-border: rgba(255, 255, 255, 0.08);
     --pnl-border-subtle: rgba(255, 255, 255, 0.04);
-    --pnl-border-hover: rgba(99, 102, 241, 0.50);
-    --pnl-border-glow: rgba(6, 182, 212, 0.45);
+    --pnl-border-hover: rgba(99, 102, 241, 0.60);
+    --pnl-border-glow-cyan: rgba(6, 182, 212, 0.55);
+    --pnl-border-glow-indigo: rgba(99, 102, 241, 0.55);
     
-    /* Blur Filters */
-    --pnl-blur: blur(16px) saturate(185%);
-    --pnl-blur-heavy: blur(24px) saturate(190%);
+    /* Depth Blur Filters */
+    --pnl-blur: blur(18px) saturate(190%);
+    --pnl-blur-heavy: blur(28px) saturate(210%);
     --pnl-blur-subtle: blur(10px);
     
-    /* Shadows & Glows */
-    --pnl-shadow-card: 0 10px 30px -5px rgba(0, 0, 0, 0.6), inset 0 1px 0 0 rgba(255, 255, 255, 0.09);
-    --pnl-shadow-hover: 0 20px 45px -8px rgba(99, 102, 241, 0.35), inset 0 1px 0 0 rgba(255, 255, 255, 0.18);
-    --pnl-shadow-glow: 0 0 25px rgba(99, 102, 241, 0.35);
+    /* Depth Shadows & Neon Blooms */
+    --pnl-shadow-card: 0 12px 35px -5px rgba(0, 0, 0, 0.65), inset 0 1px 0 0 rgba(255, 255, 255, 0.10);
+    --pnl-shadow-hover: 0 22px 55px -8px rgba(99, 102, 241, 0.40), inset 0 1px 0 0 rgba(255, 255, 255, 0.20);
+    --pnl-shadow-glow-cyan: 0 0 25px rgba(6, 182, 212, 0.45);
+    --pnl-shadow-glow-indigo: 0 0 25px rgba(99, 102, 241, 0.45);
+    --pnl-shadow-glow-emerald: 0 0 25px rgba(16, 185, 129, 0.45);
+    --pnl-shadow-glow-rose: 0 0 25px rgba(244, 63, 94, 0.45);
     
-    /* Accent Gradients - Nebula & Reviactyl */
+    /* Accent Palette */
     --pnl-accent-indigo: #6366f1;
     --pnl-accent-cyan: #06b6d4;
-    --pnl-accent-purple: #8b5cf6;
-    --pnl-accent-blue: #3b82f6;
+    --pnl-accent-sky: #38bdf8;
+    --pnl-accent-purple: #a855f7;
+    --pnl-accent-violet: #8b5cf6;
     --pnl-accent-emerald: #10b981;
     --pnl-accent-rose: #f43f5e;
     --pnl-accent-amber: #f59e0b;
     --pnl-accent-crimson: #e11d48;
 
+    /* Gradients */
     --pnl-grad-primary: linear-gradient(135deg, #6366f1 0%, #3b82f6 50%, #06b6d4 100%);
-    --pnl-grad-nebula: linear-gradient(135deg, #8b5cf6 0%, #6366f1 50%, #06b6d4 100%);
+    --pnl-grad-nebula: linear-gradient(135deg, #a855f7 0%, #6366f1 50%, #06b6d4 100%);
     --pnl-grad-reviactyl: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 50%, #6366f1 100%);
     --pnl-grad-success: linear-gradient(135deg, #059669 0%, #10b981 100%);
     --pnl-grad-warning: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
-    --pnl-grad-danger: linear-gradient(135deg, #dc2626 0%, #f43f5e 100%);
+    --pnl-grad-danger: linear-gradient(135deg, #e11d48 0%, #f43f5e 100%);
+    --pnl-grad-dark: linear-gradient(180deg, rgba(14, 21, 40, 0.8) 0%, rgba(9, 13, 26, 0.95) 100%);
     
     /* Typography */
     --pnl-font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -60,143 +69,162 @@
 }
 
 /* ==========================================================================
-   Global Ambient Mesh & Reset
+   Global Ambient Mesh & Smooth Rendering
    ========================================================================== */
 html, body {
     font-family: var(--pnl-font-sans) !important;
     background-color: var(--pnl-bg-base) !important;
     background-image: 
-        radial-gradient(at 10% 12%, rgba(99, 102, 241, 0.18) 0px, transparent 48%),
-        radial-gradient(at 90% 8%, rgba(6, 182, 212, 0.16) 0px, transparent 45%),
-        radial-gradient(at 50% 85%, rgba(139, 92, 246, 0.15) 0px, transparent 52%),
-        radial-gradient(at 88% 88%, rgba(16, 185, 129, 0.10) 0px, transparent 40%) !important;
+        radial-gradient(at 10% 12%, rgba(99, 102, 241, 0.22) 0px, transparent 50%),
+        radial-gradient(at 90% 8%, rgba(6, 182, 212, 0.20) 0px, transparent 48%),
+        radial-gradient(at 50% 85%, rgba(168, 85, 247, 0.18) 0px, transparent 55%),
+        radial-gradient(at 88% 88%, rgba(16, 185, 129, 0.12) 0px, transparent 45%),
+        radial-gradient(at 20% 70%, rgba(56, 189, 248, 0.10) 0px, transparent 40%) !important;
     background-attachment: fixed !important;
     background-size: cover !important;
-    color: #e2e8f0 !important;
+    color: #f1f5f9 !important;
     min-height: 100vh !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Sleek Modern Custom Scrollbar */
+/* Ultra Sleek Scrollbars */
 ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
 }
 ::-webkit-scrollbar-track {
-    background: rgba(6, 9, 17, 0.65);
+    background: rgba(5, 8, 17, 0.7);
 }
 ::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.18);
+    background: linear-gradient(180deg, rgba(99, 102, 241, 0.4), rgba(6, 182, 212, 0.4));
     border-radius: 9999px;
     border: 1px solid transparent;
     background-clip: padding-box;
     transition: background 0.2s ease;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--pnl-accent-indigo);
+    background: var(--pnl-grad-primary);
 }
 
 ::selection {
-    background: rgba(99, 102, 241, 0.38);
+    background: rgba(99, 102, 241, 0.45);
     color: #ffffff;
 }
 
 /* ==========================================================================
-   Top Navigation Bar (Reviactyl / Nebula Combo)
+   Top Navigation Bar (Ultra Glass & Glowing Cyber Border)
    ========================================================================== */
 nav,
 div[class*="NavigationBar"] {
     background: var(--pnl-glass-nav) !important;
     backdrop-filter: var(--pnl-blur-heavy) !important;
     -webkit-backdrop-filter: var(--pnl-blur-heavy) !important;
-    border-bottom: 1px solid var(--pnl-border) !important;
-    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.45) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.55) !important;
     position: relative;
     z-index: 50;
 }
 
+/* Neon Cyber Gradient Separator Line under Nav */
+nav::before,
+div[class*="NavigationBar"]::before {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, rgba(99, 102, 241, 0.8) 25%, rgba(6, 182, 212, 0.9) 50%, rgba(168, 85, 247, 0.8) 75%, transparent 100%);
+    pointer-events: none;
+}
+
+/* Top Nav Links */
 nav a,
 div[class*="NavigationBar"] a {
     transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    border-radius: 10px !important;
-    font-weight: 500 !important;
+    border-radius: 12px !important;
+    font-weight: 600 !important;
+    color: #cbd5e1 !important;
+    letter-spacing: 0.01em;
 }
 
 nav a:hover,
 div[class*="NavigationBar"] a:hover {
-    color: var(--pnl-accent-cyan) !important;
-    background: rgba(255, 255, 255, 0.06) !important;
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.07) !important;
     transform: translateY(-1px);
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.25);
 }
 
-/* Active navigation link */
 nav a.active,
 div[class*="NavigationBar"] a[class*="active"] {
-    background: rgba(99, 102, 241, 0.16) !important;
+    background: rgba(99, 102, 241, 0.20) !important;
     color: #ffffff !important;
-    box-shadow: inset 0 0 0 1px rgba(99, 102, 241, 0.4) !important;
+    box-shadow: inset 0 0 0 1px rgba(99, 102, 241, 0.45), 0 0 16px rgba(99, 102, 241, 0.3) !important;
 }
 
-/* Developer & Brand Watermark in Navigation (Non-removable CSS Injection) */
+/* Brand Watermark Badge in Navbar (CSS Non-Removable) */
 nav::after,
 div[class*="NavigationBar"]::after {
-    content: "Kicen x Thema Panel";
+    content: "⚡ Kicen x Thema Panel";
     display: inline-flex;
     align-items: center;
     font-size: 11px;
-    font-weight: 700;
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    background: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
+    letter-spacing: 0.09em;
+    background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    padding: 3px 12px;
-    border: 1px solid rgba(99, 102, 241, 0.35);
+    padding: 4px 14px;
+    border: 1px solid rgba(99, 102, 241, 0.4);
     border-radius: 9999px;
-    background-color: rgba(99, 102, 241, 0.10);
+    background-color: rgba(99, 102, 241, 0.12);
     margin-left: auto;
-    margin-right: 14px;
-    box-shadow: 0 0 14px rgba(99, 102, 241, 0.25);
+    margin-right: 16px;
+    box-shadow: 0 0 16px rgba(99, 102, 241, 0.3);
     pointer-events: none;
 }
 
 /* ==========================================================================
-   SubNavigation (Nebula Floating Pill Tabs)
+   SubNavigation (Nebula Floating Glowing Pill Tabs)
    ========================================================================== */
 div[class*="SubNavigation"] {
-    background: rgba(10, 15, 27, 0.75) !important;
+    background: rgba(9, 13, 26, 0.82) !important;
     backdrop-filter: var(--pnl-blur) !important;
     -webkit-backdrop-filter: var(--pnl-blur) !important;
-    border-bottom: 1px solid var(--pnl-border) !important;
-    padding-top: 6px !important;
-    padding-bottom: 6px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07) !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
 }
 
 div[class*="SubNavigation"] a {
-    border-radius: 10px !important;
-    padding: 6px 14px !important;
+    border-radius: 12px !important;
+    padding: 7px 16px !important;
     font-weight: 600 !important;
     font-size: 13px !important;
     color: #94a3b8 !important;
-    transition: all 0.2s ease !important;
+    transition: all 0.22s ease !important;
+    border: 1px solid transparent !important;
 }
 
 div[class*="SubNavigation"] a:hover {
     color: #f8fafc !important;
-    background: rgba(255, 255, 255, 0.05) !important;
+    background: rgba(255, 255, 255, 0.06) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 div[class*="SubNavigation"] a.active,
 div[class*="SubNavigation"] a[class*="active"] {
     background: var(--pnl-grad-primary) !important;
     color: #ffffff !important;
-    box-shadow: 0 4px 18px rgba(99, 102, 241, 0.4) !important;
-    border-bottom: none !important;
+    box-shadow: 0 4px 22px rgba(6, 182, 212, 0.45), 0 0 10px rgba(99, 102, 241, 0.4) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
 }
 
 /* ==========================================================================
-   Cards, Server Rows & Panels (Reviactyl x Nebula Hybrid)
+   Server Cards & Dashboard (Reviactyl x Nebula Ultra Cards)
    ========================================================================== */
 .bg-neutral-900,
 .bg-neutral-800,
@@ -217,24 +245,24 @@ div[class*="Card"] {
     backdrop-filter: var(--pnl-blur) !important;
     -webkit-backdrop-filter: var(--pnl-blur) !important;
     border: 1px solid var(--pnl-border) !important;
-    border-radius: 16px !important;
+    border-radius: 18px !important;
     box-shadow: var(--pnl-shadow-card) !important;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1) !important;
     position: relative;
     overflow: hidden;
 }
 
-/* Card hover animation with glowing aura */
+/* Card hover animation with glowing aura and 3D lift */
 div[class*="ServerRow"]:hover,
 div[class*="GreyRowBox"]:hover,
 a > div[class*="GreyRowBox"]:hover {
-    transform: translateY(-3px) !important;
+    transform: translateY(-4px) scale(1.008) !important;
     background: var(--pnl-glass-card-hover) !important;
     border-color: var(--pnl-border-hover) !important;
     box-shadow: var(--pnl-shadow-hover) !important;
 }
 
-/* Server Row Left Glow Indicator */
+/* Server Row Glowing Indicator Strip */
 div[class*="ServerRow"]::before {
     content: "";
     position: absolute;
@@ -243,23 +271,23 @@ div[class*="ServerRow"]::before {
     bottom: 0;
     width: 4px;
     background: var(--pnl-grad-primary);
-    opacity: 0.65;
-    transition: opacity 0.2s ease, width 0.2s ease;
+    opacity: 0.7;
+    transition: all 0.25s ease;
 }
 
 div[class*="ServerRow"]:hover::before {
     opacity: 1;
     width: 6px;
-    box-shadow: 0 0 14px var(--pnl-accent-cyan);
+    box-shadow: 0 0 16px var(--pnl-accent-cyan);
 }
 
 /* Card Titles / Headers */
 div[class*="TitledGreyBox"] > div:first-child {
-    background: rgba(255, 255, 255, 0.03) !important;
+    background: rgba(255, 255, 255, 0.035) !important;
     border-bottom: 1px solid var(--pnl-border) !important;
-    border-top-left-radius: 16px !important;
-    border-top-right-radius: 16px !important;
-    padding: 14px 20px !important;
+    border-top-left-radius: 18px !important;
+    border-top-right-radius: 18px !important;
+    padding: 16px 22px !important;
     font-weight: 700 !important;
     letter-spacing: -0.01em !important;
 }
@@ -269,46 +297,54 @@ div[class*="TitledGreyBox"] > div:first-child {
 div[class*="bg-neutral-600"] {
     background: var(--pnl-glass-subtle) !important;
     border: 1px solid rgba(255, 255, 255, 0.05) !important;
-    border-radius: 12px !important;
+    border-radius: 14px !important;
 }
 
 /* ==========================================================================
-   Console & Terminal (Nebula Sleek Codebase)
+   Console & Terminal (Cyberpunk Aesthetic)
    ========================================================================== */
 div[class*="Terminal"],
 .xterm,
 .xterm-viewport,
 div[class*="Console"] {
-    background: rgba(4, 7, 14, 0.94) !important;
-    border-radius: 16px !important;
-    border: 1px solid rgba(99, 102, 241, 0.28) !important;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.07) !important;
+    background: rgba(3, 6, 13, 0.95) !important;
+    border-radius: 18px !important;
+    border: 1px solid rgba(99, 102, 241, 0.35) !important;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 0 25px rgba(99, 102, 241, 0.15) !important;
     font-family: var(--pnl-font-mono) !important;
 }
 
 .xterm-screen {
-    padding: 12px !important;
+    padding: 14px !important;
 }
 
-/* Console Prompt Bar */
+/* Terminal Input Prompt */
 div[class*="Console"] input,
 div[class*="Terminal"] input {
     font-family: var(--pnl-font-mono) !important;
-    background: rgba(8, 12, 22, 0.88) !important;
-    border: 1px solid rgba(99, 102, 241, 0.35) !important;
-    border-radius: 12px !important;
+    background: rgba(7, 11, 22, 0.9) !important;
+    border: 1px solid rgba(99, 102, 241, 0.4) !important;
+    border-radius: 14px !important;
+    color: #38bdf8 !important;
+    padding: 10px 16px !important;
+}
+
+div[class*="Console"] input:focus,
+div[class*="Terminal"] input:focus {
+    border-color: var(--pnl-accent-cyan) !important;
+    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.3), 0 0 20px rgba(6, 182, 212, 0.4) !important;
 }
 
 /* ==========================================================================
-   Power Action Buttons (Reviactyl Glow Buttons)
+   Power Action Buttons (Reviactyl Ultra Glow)
    ========================================================================== */
 button,
 .btn {
-    border-radius: 12px !important;
+    border-radius: 14px !important;
     font-family: var(--pnl-font-sans) !important;
-    font-weight: 600 !important;
-    letter-spacing: 0.01em !important;
-    transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.02em !important;
+    transition: all 0.24s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 /* Primary Button (Nebula Gradient) */
@@ -319,15 +355,15 @@ button[class*="bg-primary"],
     background: var(--pnl-grad-primary) !important;
     border: none !important;
     color: #ffffff !important;
-    box-shadow: 0 4px 18px rgba(99, 102, 241, 0.42) !important;
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.45) !important;
 }
 
 .bg-primary-500:hover,
 .bg-primary-600:hover,
 button[class*="bg-primary"]:hover,
 .btn-primary:hover {
-    transform: translateY(-2px) scale(1.02) !important;
-    box-shadow: 0 6px 25px rgba(6, 182, 212, 0.6) !important;
+    transform: translateY(-2px) scale(1.03) !important;
+    box-shadow: 0 6px 28px rgba(6, 182, 212, 0.65) !important;
 }
 
 /* Start Button (Emerald Glow) */
@@ -338,15 +374,15 @@ button[class*="bg-green"],
     background: var(--pnl-grad-success) !important;
     border: none !important;
     color: #ffffff !important;
-    box-shadow: 0 4px 18px rgba(16, 185, 129, 0.45) !important;
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.5) !important;
 }
 
 .bg-green-500:hover,
 .bg-green-600:hover,
 button[class*="bg-green"]:hover,
 .btn-success:hover {
-    transform: translateY(-2px) scale(1.02) !important;
-    box-shadow: 0 6px 25px rgba(16, 185, 129, 0.65) !important;
+    transform: translateY(-2px) scale(1.03) !important;
+    box-shadow: 0 6px 30px rgba(16, 185, 129, 0.75) !important;
 }
 
 /* Stop / Restart Button (Amber Glow) */
@@ -357,15 +393,15 @@ button[class*="bg-yellow"],
     background: var(--pnl-grad-warning) !important;
     border: none !important;
     color: #ffffff !important;
-    box-shadow: 0 4px 18px rgba(245, 158, 11, 0.45) !important;
+    box-shadow: 0 4px 20px rgba(245, 158, 11, 0.5) !important;
 }
 
 .bg-yellow-500:hover,
 .bg-yellow-600:hover,
 button[class*="bg-yellow"]:hover,
 .btn-warning:hover {
-    transform: translateY(-2px) scale(1.02) !important;
-    box-shadow: 0 6px 25px rgba(245, 158, 11, 0.65) !important;
+    transform: translateY(-2px) scale(1.03) !important;
+    box-shadow: 0 6px 30px rgba(245, 158, 11, 0.75) !important;
 }
 
 /* Kill / Danger Button (Crimson Glow) */
@@ -376,29 +412,29 @@ button[class*="bg-red"],
     background: var(--pnl-grad-danger) !important;
     border: none !important;
     color: #ffffff !important;
-    box-shadow: 0 4px 18px rgba(244, 63, 94, 0.45) !important;
+    box-shadow: 0 4px 20px rgba(244, 63, 94, 0.5) !important;
 }
 
 .bg-red-500:hover,
 .bg-red-600:hover,
 button[class*="bg-red"]:hover,
 .btn-danger:hover {
-    transform: translateY(-2px) scale(1.02) !important;
-    box-shadow: 0 6px 25px rgba(244, 63, 94, 0.65) !important;
+    transform: translateY(-2px) scale(1.03) !important;
+    box-shadow: 0 6px 30px rgba(244, 63, 94, 0.75) !important;
 }
 
 /* Neutral / Ghost Buttons */
 button[class*="bg-neutral-600"],
 button[class*="bg-neutral-700"] {
-    background: rgba(255, 255, 255, 0.06) !important;
+    background: rgba(255, 255, 255, 0.07) !important;
     border: 1px solid var(--pnl-border) !important;
     backdrop-filter: var(--pnl-blur-subtle) !important;
 }
 
 button[class*="bg-neutral-600"]:hover,
 button[class*="bg-neutral-700"]:hover {
-    background: rgba(255, 255, 255, 0.12) !important;
-    border-color: rgba(255, 255, 255, 0.22) !important;
+    background: rgba(255, 255, 255, 0.14) !important;
+    border-color: rgba(255, 255, 255, 0.25) !important;
 }
 
 /* ==========================================================================
@@ -408,34 +444,34 @@ div[class*="progress"],
 div[role="progressbar"] {
     border-radius: 9999px !important;
     background: rgba(255, 255, 255, 0.06) !important;
-    border: 1px solid rgba(255, 255, 255, 0.07) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
     overflow: hidden !important;
-    height: 8px !important;
+    height: 9px !important;
 }
 
 div[role="progressbar"] > div {
     border-radius: 9999px !important;
     background: var(--pnl-grad-primary) !important;
-    box-shadow: 0 0 14px rgba(6, 182, 212, 0.65) !important;
-    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: 0 0 16px rgba(6, 182, 212, 0.75) !important;
+    transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 /* ==========================================================================
    Status Indicators & Pulsing Dots
    ========================================================================== */
 @keyframes pnl-pulse {
-    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-    70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
-    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    0% { transform: scale(0.92); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.8); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+    100% { transform: scale(0.92); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
 }
 
 span[class*="status"] {
-    font-weight: 600 !important;
+    font-weight: 700 !important;
     border-radius: 9999px !important;
-    padding: 3px 12px !important;
+    padding: 4px 14px !important;
     font-size: 11px !important;
     text-transform: uppercase !important;
-    letter-spacing: 0.05em !important;
+    letter-spacing: 0.06em !important;
 }
 
 /* ==========================================================================
@@ -450,18 +486,19 @@ select,
 textarea {
     background: var(--pnl-glass-input) !important;
     border: 1px solid var(--pnl-border) !important;
-    border-radius: 12px !important;
+    border-radius: 14px !important;
     color: #f8fafc !important;
     backdrop-filter: var(--pnl-blur-subtle) !important;
     -webkit-backdrop-filter: var(--pnl-blur-subtle) !important;
-    transition: all 0.2s ease !important;
+    transition: all 0.22s ease !important;
+    padding: 10px 14px !important;
 }
 
 input:focus,
 select:focus,
 textarea:focus {
     border-color: var(--pnl-accent-indigo) !important;
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25), 0 0 18px rgba(99, 102, 241, 0.25) !important;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3), 0 0 22px rgba(99, 102, 241, 0.3) !important;
     outline: none !important;
 }
 
@@ -470,69 +507,71 @@ textarea:focus {
    ========================================================================== */
 div[role="dialog"],
 div[class*="Modal"] {
-    background: rgba(9, 14, 27, 0.90) !important;
+    background: rgba(8, 13, 26, 0.92) !important;
     backdrop-filter: var(--pnl-blur-heavy) !important;
     -webkit-backdrop-filter: var(--pnl-blur-heavy) !important;
-    border: 1px solid rgba(255, 255, 255, 0.12) !important;
-    border-radius: 20px !important;
-    box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.85), 0 0 35px rgba(99, 102, 241, 0.25) !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    border-radius: 22px !important;
+    box-shadow: 0 35px 80px -15px rgba(0, 0, 0, 0.9), 0 0 40px rgba(99, 102, 241, 0.3) !important;
 }
 
 /* ==========================================================================
-   Developer Watermark & Branding UI Styles
+   Persistent Ambient Developer Watermark Bar
    ========================================================================== */
 .themapnl-footer-bar {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 38px;
-    background: rgba(7, 11, 21, 0.88);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    height: 40px;
+    background: rgba(6, 10, 20, 0.90);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.09);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 24px;
     z-index: 9999;
     font-size: 12px;
     color: #94a3b8;
     pointer-events: auto;
     font-family: var(--pnl-font-sans);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .themapnl-footer-bar a {
     color: #38bdf8;
     text-decoration: none;
     font-weight: 600;
-    transition: color 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 .themapnl-footer-bar a:hover {
     color: #818cf8;
-    text-shadow: 0 0 8px rgba(99, 102, 241, 0.5);
+    text-shadow: 0 0 10px rgba(99, 102, 241, 0.6);
 }
 
 .themapnl-badge {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    background: rgba(99, 102, 241, 0.14);
-    border: 1px solid rgba(99, 102, 241, 0.32);
-    padding: 3px 12px;
+    gap: 7px;
+    background: rgba(99, 102, 241, 0.16);
+    border: 1px solid rgba(99, 102, 241, 0.38);
+    padding: 4px 14px;
     border-radius: 9999px;
     color: #e2e8f0;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 11px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.22s ease;
+    box-shadow: 0 0 12px rgba(99, 102, 241, 0.2);
 }
 
 .themapnl-badge:hover {
-    background: rgba(99, 102, 241, 0.25);
-    border-color: rgba(6, 182, 212, 0.5);
-    box-shadow: 0 0 14px rgba(99, 102, 241, 0.35);
+    background: rgba(99, 102, 241, 0.28);
+    border-color: rgba(6, 182, 212, 0.6);
+    box-shadow: 0 0 18px rgba(99, 102, 241, 0.45);
     transform: translateY(-1px);
 }
 
@@ -555,7 +594,7 @@ div[class*="Modal"] {
 }
 
 .main-header .logo {
-    background: rgba(8, 12, 22, 0.94) !important;
+    background: rgba(7, 11, 22, 0.95) !important;
     border-right: 1px solid var(--pnl-border) !important;
     border-bottom: 1px solid var(--pnl-border) !important;
     font-family: var(--pnl-font-sans) !important;
@@ -568,7 +607,7 @@ div[class*="Modal"] {
 
 .main-sidebar,
 .left-side {
-    background: rgba(8, 12, 22, 0.88) !important;
+    background: rgba(7, 11, 22, 0.90) !important;
     backdrop-filter: var(--pnl-blur-heavy) !important;
     -webkit-backdrop-filter: var(--pnl-blur-heavy) !important;
     border-right: 1px solid var(--pnl-border) !important;
@@ -592,8 +631,9 @@ div[class*="Modal"] {
 .sidebar-menu > li:hover > a,
 .sidebar-menu > li.active > a {
     color: #ffffff !important;
-    background: rgba(99, 102, 241, 0.14) !important;
+    background: rgba(99, 102, 241, 0.16) !important;
     border-left-color: var(--pnl-accent-indigo) !important;
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.2);
 }
 
 .box {
@@ -601,7 +641,7 @@ div[class*="Modal"] {
     backdrop-filter: var(--pnl-blur) !important;
     -webkit-backdrop-filter: var(--pnl-blur) !important;
     border: 1px solid var(--pnl-border) !important;
-    border-radius: 16px !important;
+    border-radius: 18px !important;
     box-shadow: var(--pnl-shadow-card) !important;
     color: #e2e8f0 !important;
 }
@@ -620,8 +660,8 @@ div[class*="Modal"] {
 .box-footer {
     background: rgba(255, 255, 255, 0.02) !important;
     border-top: 1px solid var(--pnl-border) !important;
-    border-bottom-left-radius: 16px !important;
-    border-bottom-right-radius: 16px !important;
+    border-bottom-left-radius: 18px !important;
+    border-bottom-right-radius: 18px !important;
 }
 
 .info-box {
@@ -629,14 +669,14 @@ div[class*="Modal"] {
     backdrop-filter: var(--pnl-blur) !important;
     -webkit-backdrop-filter: var(--pnl-blur) !important;
     border: 1px solid var(--pnl-border) !important;
-    border-radius: 16px !important;
+    border-radius: 18px !important;
     box-shadow: var(--pnl-shadow-card) !important;
     overflow: hidden !important;
 }
 
 .info-box-icon {
-    border-top-left-radius: 16px !important;
-    border-bottom-left-radius: 16px !important;
+    border-top-left-radius: 18px !important;
+    border-bottom-left-radius: 18px !important;
 }
 
 .table > thead > tr > th,
@@ -649,5 +689,5 @@ div[class*="Modal"] {
 }
 
 .table-hover > tbody > tr:hover {
-    background-color: rgba(99, 102, 241, 0.08) !important;
+    background-color: rgba(99, 102, 241, 0.10) !important;
 }
